@@ -8,3 +8,20 @@ class Pessoa(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Marca(models.Model):
+    nome = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nome
+
+
+class Veiculo(models.Model):
+    marca = models.ForeignKey(Marca, on_delete=False)
+    placa = models.CharField(max_length=7)
+    cor = models.CharField(max_length=15)
+    observacao = models.TextField()
+
+    def __str__(self):
+        return self.placa
