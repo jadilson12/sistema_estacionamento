@@ -21,6 +21,7 @@ class Veiculo(models.Model):
     marca = models.ForeignKey(Marca, on_delete=False)
     placa = models.CharField(max_length=7)
     cor = models.CharField(max_length=15)
+    proprietario = models.ForeignKey(Pessoa)
     observacao = models.TextField()
 
     def __str__(self):
