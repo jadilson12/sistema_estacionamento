@@ -5,4 +5,5 @@ admin.site.register(Pessoa)
 admin.site.register(Marca)
 admin.site.register(Veiculo)
 admin.site.register(Parametro)
+admin.site.register(MovRotativo)
 
