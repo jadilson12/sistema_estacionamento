@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletando</title>
+</head>
+<body>
+    <h2>Você tem certeza que quer escluir: {{ obj }}</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <button type="submit">Excluir</button>
+    </form>
+</body>
+</html>
