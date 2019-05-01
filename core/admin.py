@@ -9,7 +9,8 @@ from .models import (
 
 
 class MovRotativoAmdin(admin.ModelAdmin):
-    list_display = ('checkin', 'checkout', 'valor_hora', 'pago')
+    list_display = (
+        'checkin', 'checkout', 'valor_hora', 'pago', 'total', 'horas_total')
 
 
 admin.site.register(Pessoa)
