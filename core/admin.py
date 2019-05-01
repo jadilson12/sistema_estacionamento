@@ -1,9 +1,19 @@
 from django.contrib import admin
-from .models import *
+from .models import (
+    Pessoa,
+    Marca,
+    Veiculo,
+    Parametro,
+    MovRotativo
+)
+
+
+class MovRotativoAmdin(admin.ModelAdmin):
+    list_display = ('checkin', 'checkout', 'valor_hora', 'pago')
+
 
 admin.site.register(Pessoa)
 admin.site.register(Marca)
 admin.site.register(Veiculo)
 admin.site.register(Parametro)
-admin.site.register(MovRotativo)
-
+admin.site.register(MovRotativo, MovRotativoAmdin)
