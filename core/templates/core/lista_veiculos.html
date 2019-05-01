@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de veiculos</title>
+</head>
+<body>
+    <ul>
+        {% for veiculo in veiculos %}
+
+            <li>{{ veiculo.placa }}</li>
+
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
