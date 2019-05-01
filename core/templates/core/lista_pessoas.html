@@ -8,12 +8,13 @@
     <ul>
         {% for pessoa in pessoas %}
 
-            <li>{{ pessoa.nome }}</li>
+            <li>
+                <a href="{% url 'core_update_pessoa' pessoa.id %}">{{ pessoa.nome }}</a>
+
+            </li>
 
         {% endfor %}
     </ul>
-
-    <hr>
 
     <form action="{% url 'core_criar_pessoas' %}" method="post">
 
@@ -21,7 +22,7 @@
 
         {{ form.as_p }}
 
-        <button type="submit">Salvar</button>
+        <button type="submit">Cadastrar</button>
     </form>
 
 </body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de mensalista</title>
+</head>
+<body>
+
+    <form action="{% url 'core_update_mensalista' mensalista.id %}" method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Salvar</button>
+    </form>
+
+</body>
+</html>

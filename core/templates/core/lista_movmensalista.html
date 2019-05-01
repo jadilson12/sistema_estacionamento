@@ -6,9 +6,12 @@
 </head>
 <body>
     <ul>
-        {% for mov in mov_mens %}
+        {% for mov in movmensalistas %}
 
-            <li>{{mov.mensalista }}</li>
+            <li>
+{#                <a href="{% url 'core_update_movrotativo' movmensalista.id %}">{{ mov.mensalista }}</a>#}
+                <a href="{% url 'core_update_movmensalista' mov.id  %}">{{ mov.mensalista }}</a>
+            </li>
 
         {% endfor %}
     </ul>
@@ -19,7 +22,7 @@
 
         {{ form.as_p }}
 
-        <button type="submit">Salvar</button>
+        <button type="submit">Cadastrar</button>
     </form>
 
 </body>

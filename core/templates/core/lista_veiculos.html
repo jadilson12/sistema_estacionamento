@@ -7,8 +7,9 @@
 <body>
     <ul>
         {% for veiculo in veiculos %}
-
-            <li>{{ veiculo.placa }}</li>
+            <li>
+                        <a href="{% url 'core_update_veiculo' veiculo.id %}">{{ veiculo.placa }}</a>
+            </li>
 
         {% endfor %}
     </ul>
@@ -19,7 +20,7 @@
 
         {{ form.as_p }}
 
-        <button type="submit">Salvar</button>
+        <button type="submit">Cadastrar</button>
     </form>
 
 </body>

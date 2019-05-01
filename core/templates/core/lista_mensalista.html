@@ -6,20 +6,23 @@
 </head>
 <body>
     <ul>
-        {% for mensalista in mensalistas %}
+        {% for m in mensalistas %}
 
-            <li>{{ mensalista.veiculo }}</li>
+            <li>
+{#                <a href="{% url 'core_update_mensalista' mensalista.id %}"> {{ m.veiculo }} - {{ m.inicio }}</a>#}
+                <a href="{% url 'core_update_mensalista' m.id %}"> {{ m.veiculo }} - {{ m.inicio }}</a>
+            </li>
 
         {% endfor %}
     </ul>
 
-    <form action="{% url 'core_criar_mensalista' %}" method="post">
+    <form action="{% url 'core_criar_mensalista'  %}" method="post">
 
         {% csrf_token %}
 
         {{ form.as_p }}
 
-        <button type="submit">Salvar</button>
+        <button type="submit">Cadastrar</button>
     </form>
 
 </body>
