@@ -10,7 +10,10 @@ from .models import (
 
 class MovRotativoAmdin(admin.ModelAdmin):
     list_display = (
-        'checkin', 'checkout', 'valor_hora', 'pago', 'total', 'horas_total')
+         'veiculo','checkin', 'checkout', 'valor_hora', 'pago', 'total', 'horas_total')
+
+    def veiculo(self, obj):
+        return obj.veiculo
 
 
 admin.site.register(Pessoa)
