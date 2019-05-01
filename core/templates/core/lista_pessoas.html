@@ -13,5 +13,16 @@
         {% endfor %}
     </ul>
 
+    <hr>
+
+    <form action="{% url 'core_criar_pessoas' %}" method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Salvar</button>
+    </form>
+
 </body>
 </html>

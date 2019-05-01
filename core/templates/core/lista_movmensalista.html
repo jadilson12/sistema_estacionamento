@@ -13,5 +13,14 @@
         {% endfor %}
     </ul>
 
+    <form action="{% url 'core_criar_movmensalista' %}" method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Salvar</button>
+    </form>
+
 </body>
 </html>
