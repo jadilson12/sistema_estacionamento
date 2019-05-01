@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Deletando</title>
-</head>
-<body>
-    <h2>Você tem certeza que quer escluir: {{ obj }}</h2>
+{% extends 'base.html' %}
+{% load bootstrap %}
 
-    <form method="post">
+{% block main %}
 
-        {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <h2>Você tem certeza que quer escluir: {{ obj }}</h2>
+            <form method="post">
 
-        <button type="submit">Excluir</button>
-    </form>
-</body>
-</html>
+                {% csrf_token %}
+
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
+        </div>
+    </div>
+
+{%  endblock %}

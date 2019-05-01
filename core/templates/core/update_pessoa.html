@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Pessoas</title>
-</head>
-<body>
-    <form action="{% url 'core_update_pessoa' pessoa.id %}" method="post">
+{% extends 'base.html' %}
+{% load bootstrap %}
 
-        {% csrf_token %}
+{% block main %}
+    <div class="row">
+        <div class="col">
+            <form action="{% url 'core_update_pessoa' pessoa.id %}" method="post">
+                {% csrf_token %}
 
-        {{ form.as_p }}
+                {{ form|bootstrap}}
 
-        <button type="submit">Salvar</button>
-    </form>
-    <a href="{% url 'core_delete_pessoa' pessoa.id %}" >Excluir</a>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a  role="button" class="btn btn-danger" href="{% url 'core_delete_pessoa' pessoa.id %}" >Excluir</a>
+            </form>
+        </div>
+    </div>
 
-</body>
-</html>
+{%  endblock %}

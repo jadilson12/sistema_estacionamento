@@ -1,29 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de MovMensalista</title>
-</head>
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
 <body>
-    <ul>
-        {% for mov in movmensalistas %}
+    <div class="row">
+        <div class="col">
+            <h2>Lista de Movimentos mensalista</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="{% url 'core_criar_movmensalista' %}" method="post">
 
-            <li>
-{#                <a href="{% url 'core_update_movrotativo' movmensalista.id %}">{{ mov.mensalista }}</a>#}
-                <a href="{% url 'core_update_movmensalista' mov.id  %}">{{ mov.mensalista }}</a>
-            </li>
+                {% csrf_token %}
 
-        {% endfor %}
-    </ul>
+                {{ form|bootstrap }}
 
-    <form action="{% url 'core_criar_movmensalista' %}" method="post">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <ul>
+                {% for mov in movmensalistas %}
 
-        {% csrf_token %}
+                    <li><a href="{% url 'core_update_movmensalista' mov.id  %}">{{ mov.mensalista }}</a></li>
 
-        {{ form.as_p }}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
-        <button type="submit">Cadastrar</button>
-    </form>
-
-</body>
-</html>
+{%  endblock %}

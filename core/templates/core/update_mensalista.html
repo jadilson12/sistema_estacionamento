@@ -1,21 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de mensalista</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load bootstrap %}
 
-    <form action="{% url 'core_update_mensalista' mensalista.id %}" method="post">
+{% block main %}
+    <div class="row">
+        <div class="col">
+            <h2>Atualizar mensalista</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form action="{% url 'core_update_mensalista' mensalista.id %}" method="post">
 
-        {% csrf_token %}
+                {% csrf_token %}
 
-        {{ form.as_p }}
+                {{ form|bootstrap }}
 
-        <button type="submit">Salvar</button>
-    </form>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a  role="button" class="btn btn-danger" href="{% url 'core_delete_mensalista'  mensalista.id %}" >Excluir</a>
+            </form>
+        </div>
+    </div>
 
- <a href="{% url 'core_delete_mensalista'  mensalista.id %}" >Excluir</a>
 
-</body>
-</html>
+
+
+{%  endblock %}

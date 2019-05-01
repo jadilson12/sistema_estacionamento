@@ -1,27 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de movrotativo</title>
-</head>
-<body>
-    <ul>
-        {% for mov_rot in movrotativo %}
+{% extends 'base.html' %}
 
-            <li>
-                <a href="{% url 'core_update_movrotativo' mov_rot.id %}">{{ mov_rot.veiculo }}</a>
-            </li>
+{% load bootstrap %}
 
-        {% endfor %}
-    </ul>
+{% block main %}
 
-    <form action="{% url 'core_criar_movrotativo' %}" method="post">
+    <div class="row">
+        <div class="col">
+            <h2>Lista de movimentos rotativos</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="{% url 'core_criar_movrotativo' %}" method="post">
 
-        {% csrf_token %}
+                {% csrf_token %}
 
-        {{ form.as_p }}
+                {{ form| bootstrap }}
 
-        <button type="submit">Cadastrar</button>
-    </form>
-</body>
-</html>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+            </form>
+        </div>
+        <div class="col-sm-6">
+             <ul>
+                {% for mov_rot in movrotativo %}
+
+                    <li><a href="{% url 'core_update_movrotativo' mov_rot.id %}">{{ mov_rot.veiculo }}</a></li>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{%  endblock %}
