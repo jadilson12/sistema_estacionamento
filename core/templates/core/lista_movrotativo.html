@@ -21,13 +21,36 @@
             </form>
         </div>
         <div class="col-sm-6">
-             <ul>
-                {% for mov_rot in movrotativo %}
+            <table id="example" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Checkin</th>
+                        <th>Checkout Pagamento</th>
+                        <th>Valor hora</th>
+                        <th>Veiculo</th>
+                        <th>Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for mov_rot in movrotativo %}
+                        <tr>
+                            <td>{{ mov_rot.id }}</td>
+                            <td>{{ mov_rot.checkin }}</td>
+                            <td>{{ mov_rot.checkout }}</td>
+                            <td>{{ mov_rot.valor_hora }}</td>
+                            <td>{{ mov_rot.veiculo }}</td>
+                                <td>{% if mov_rot.pago  %}
+                                        Sim
+                                    {% else %}
+                                        Não
+                                    {% endif %}
 
-                    <li><a href="{% url 'core_update_movrotativo' mov_rot.id %}">{{ mov_rot.veiculo }}</a></li>
-
-                {% endfor %}
-            </ul>
+                                </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 

@@ -20,13 +20,26 @@
             </form>
         </div>
         <div class="col-sm-6">
-            <ul>
-                {% for mov in movmensalistas %}
-
-                    <li><a href="{% url 'core_update_movmensalista' mov.id  %}">{{ mov.mensalista }}</a></li>
-
-                {% endfor %}
-            </ul>
+            <table id="example" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Mensalista</th>
+                        <th>Data Pagamento</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for mov in movmensalistas %}
+                        <tr>
+                            <td>{{ mov.id }}</td>
+                            <td>{{ mov.mensalista }}</td>
+                            <td>{{ mov.data_pgto }}</td>
+                            <td>{{ mov.total }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 

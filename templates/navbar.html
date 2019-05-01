@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'core_home' %}">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Serviços
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item  {% if url_name == 'core_lista_pessoas*' %}active{% endif %}" href="{% url 'core_lista_pessoas' %} ">Pessoas</a>
+          <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
+          <a class="dropdown-item" href="{% url 'core_lista_movrotativo' %}">Rotativos</a>
+          <a class="dropdown-item" href="{% url 'core_lista_mensalista' %}">Mensalista</a>
+          <a class="dropdown-item" href="{% url 'core_lista_movmensalista' %}">Mov Mensalista</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
