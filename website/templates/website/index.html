@@ -1,5 +1,62 @@
 {% extends 'website/base.html' %}
+{% load static %}
 
 {% block main %}
-    <h1>Sejam bem vindo ao website</h1>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Estacionamento Valparaiso</h1>
+            <span>O mais barato da região</span>
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static "img/logo.png" %}" alt="Estacionamento Valparaiso">
+        </div>
+    </div>
+
+    {% include 'website/menu.html' %}
+
+    <div class="row row-space">
+        <div class="col-sm-6">
+                
+                Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai
+                girarzis! Manduma pindureta quium dia nois paga. Suco de cevadiss, é um leite divinis, qui tem lupuliz,
+                matis
+        </div>
+
+        <div class="col-sm-6">
+                Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Quem num gosta di mim
+                que vai caçá sua turmis! Viva Forevis aptent taciti sociosqu ad litora torquent. Per aumento de
+                cachacis, eu reclamis.
+        </div>
+    </div>
+        <div class="row row-space">
+            <div class="col-sm-4">
+                    Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai
+                    girarzis! Manduma pindureta quium dia nois paga. Suco de cevadiss, é um leite divinis, qui tem lupuliz,
+                    matis, aguis e fermentis. Si num tem leite
+            </div>
+            <div class="col-sm-4">
+                <img src="{% static 'img/logo.png' %}">
+            </div>
+            <div class="col-sm-4">
+                    Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Quem num gosta di mim
+                    que vai caçá sua turmis! Viva Forevis aptent taciti sociosqu ad litora torquent. Per aumento de
+                    cachacis, eu reclamis.
+            </div>
+        </div>
+        <div class="row row-space">
+        <div class="col-sm-6">
+
+                Mussum Ipsum, cacilds vidis litro abertis. Si u mundo tá muito paradis? Toma um mé que o mundo vai
+                girarzis! Manduma pindureta quium dia nois paga. Suco de cevadiss, é um leite divinis, qui tem lupuliz,
+                matis
+        </div>
+
+        <div class="col-sm-6">
+                Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Quem num gosta di mim
+                que vai caçá sua turmis! Viva Forevis aptent taciti sociosqu ad litora torquent. Per aumento de
+                cachacis, eu reclamis.
+        </div>
+    </div>
+    {% include 'website/footer.html' %}
 {%  endblock %}
