@@ -13,13 +13,14 @@ from .forms import (
     MensalistaForm,
     VeiculoForm
 )
-
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     context = {'mensagem': 'ola mundo'}
     return render(request, 'core/index.html', context)
 
 
+@login_required
 def lista_pessoas(request):
     pessoas = Pessoa.objects.all()
     form = PessoaForm()
@@ -27,6 +28,7 @@ def lista_pessoas(request):
     return render(request, 'core/lista_pessoas.html', data)
 
 
+@login_required
 def criar_pessoas(request):
     form = PessoaForm(request.POST or None)
     if form.is_valid():
@@ -34,6 +36,7 @@ def criar_pessoas(request):
     return redirect('core_lista_pessoas')
 
 
+@login_required
 def update_pessoa(request, id):
     data = {}
     pessoa = Pessoa.objects.get(id=id)

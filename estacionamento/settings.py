@@ -118,6 +118,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # login custom
-LOGIN_URL = 'core_home'
+LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'core_home'
 LOGIN_REDIRECT_URL = 'core_home'
