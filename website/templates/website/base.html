@@ -12,8 +12,13 @@
 <body>
     <div class="container">
 
-        {% block main %}
-        {% endblock  %}
+    {% include 'website/header.html' %}
+
+    {% include 'website/menu.html' %}
+
+    {% block main %} {% endblock  %}
+
+    {% include 'website/footer.html' %}
 
     </div>
 
